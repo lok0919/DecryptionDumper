@@ -21,10 +21,10 @@ int main()
 	while (true)
 	{
 		printf("Select game: \n"
-			"\t1: Modern Warfare\n"
-			"\t2: Vanguard\n"
-			"\t3: Modern Warfare 2 (steam)\n"
-			"\t4: Modern Warfare 2 (bnet)\n");
+			   "\t1: Modern Warfare\n"
+			   "\t2: Vanguard\n"
+			   "\t3: Modern Warfare 2 (steam)\n"
+			   "\t4: Modern Warfare 2 (bnet)\n");
 		selected_game = (Game)((int)_getch() - '0');
 		switch (selected_game)
 		{
@@ -38,7 +38,8 @@ int main()
 			break;
 		case ModernWarfare2steam:
 			printf("Dumping Modern Warfare 2 (steam).\n");
-			debug.Init("C:\\Program Files (x86)\\Steam\\steamapps\\\common\\Call of Duty HQ\\cod.exe");
+
+			debug.Init("C:\\Users\\user\\source\\repos\\DecryptionDumper_orig\\x64\\Release\\cod.exe");
 			break;
 		case ModernWarfare2bnet:
 			printf("Dumping Modern Warfare 2 (bnet).\n");
@@ -47,20 +48,22 @@ int main()
 		default:
 			system("cls");
 			printf("Not a valid input.\n");
-			//std::cin.ignore(INT_MAX, '\n');
+			// std::cin.ignore(INT_MAX, '\n');
 			continue;
 			break;
 		}
-		debug.Dump_Process();
+		// debug.Dump_Process();
 
 		system("cls");
 		Disassembler dis = Disassembler(&debug);
-		switch (selected_game) {
+		switch (selected_game)
+		{
 		case ModernWarfare:
 		case ModernWarfare2steam:
 		case ModernWarfare2bnet:
-			dis.Dump_ClientInfo_MW(debug.scanner->Find_Pattern("48 8B 4C 24 ? BA ? ? ? ? 0F B7"));
 			dis.Dump_ClientBase(debug.scanner->Find_Pattern("4C 8B 83 ? ? ? ? 90 C6 44 24 ? ? 0F B6 44 24"));
+			dis.Dump_ClientInfo_MW(debug.scanner->Find_Pattern("48 8B 4C 24 ? BA ? ? ? ? 0F B7"));
+			dis.Dump_Cbuff(debug.scanner->Find_Pattern("48 8B 0D ? ? ? ? 48 8B F0 C6 44 24"));
 			break;
 		case Vanguard:
 			dis.Dump_ClientInfo_Vanguard(debug.scanner->Find_Pattern("48 8B 83 ?? ?? ?? ?? C6 44 24 ?? ?? 0F B6 4C 24 ?? C0"));

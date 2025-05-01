@@ -11,3 +11,10 @@ Summary of how it works:
 It also supports dumping decryption for Vanguard, but I didn't bother adding offsets for that game.
 
 Released on: https://www.unknowncheats.me/forum/call-of-duty-modern-warfare/478869-decryption-offset-dumper.html
+
+---
+Updated for MW2:
+
+Credit to gfizzle from UC
+
+https://www.unknowncheats.me/forum/call-of-duty-modern-warfare-ii/698982-nuxar1-decryption-dumper-partial-fix.html
