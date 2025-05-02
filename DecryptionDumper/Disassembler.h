@@ -61,7 +61,8 @@ public:
 	void Dump_ClientBase(uintptr_t address);
 	void Dump_BoneBase(uintptr_t address);
 	void Dump_BoneIndex(uintptr_t address);
-
+	void Dump_Cbuff(uintptr_t address);
+	
 	void Dump_Offsets_MW();
 };
 
