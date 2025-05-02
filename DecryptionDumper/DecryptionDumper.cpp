@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
 	}
 
 	debug.Init(exe_path, sleep_ms);
-	
+
 	system("cls");
 	Disassembler dis = Disassembler(&debug);
 	switch (selected_game)
@@ -126,5 +126,4 @@ int main(int argc, char *argv[])
 	if (selected_game != Game::Vanguard)
 		dis.Dump_Offsets_MW();
 	std::getchar();
-}
 }
