@@ -21,7 +21,7 @@ void print_usage()
 			  << "  sleep_ms: Sleep duration before starting debugger in milliseconds (default: 3)\n";
 }
 
-int main()
+int main(int argc, char *argv[])
 {
 	Debugger debug = Debugger();
 	Game selected_game = Game::none;
