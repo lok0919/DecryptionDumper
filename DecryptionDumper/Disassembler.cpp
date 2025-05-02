@@ -578,7 +578,7 @@ void Disassembler::Load_DecryptionTrace(std::vector<InstructionTrace> &instructi
 		for (size_t j = 0; j < 8; j++)
 		{
 			if (modified[j] != ZydisRegister::ZYDIS_REGISTER_NONE)
-					last_modifiedified[j]] = instruction_trace.size() - 1;
+				last_modified[modified[j]] = instruction_trace.size() - 1;
 		}
 		if (instruction.operands[0].mem.base == ZydisRegister::ZYDIS_REGISTER_RSP)
 		{
