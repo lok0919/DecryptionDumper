@@ -44,7 +44,7 @@ private:
 public:
 	Debugger();
 
-	bool Init(std::string exe_path);
+	bool Init(std::string exe_path, int sleep_ms);
 	void Dump_Process();
 	CONTEXT GetContext();
 	bool SetContext(CONTEXT* context);
